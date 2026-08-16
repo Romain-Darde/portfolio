@@ -32,7 +32,6 @@ export default function BeforeAfterSlider({
         src={after}
         alt={`${alt} (after)`}
         fill
-        unoptimized
         sizes="(min-width: 768px) 480px, 100vw"
         className="object-cover"
       />
@@ -41,7 +40,6 @@ export default function BeforeAfterSlider({
         src={before}
         alt={`${alt} (before)`}
         fill
-        unoptimized
         sizes="(min-width: 768px) 480px, 100vw"
         className="object-cover"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}

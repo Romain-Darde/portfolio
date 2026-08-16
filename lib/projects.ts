@@ -33,7 +33,7 @@ export const projects: Project[] = [
     stack: ["Arduino", "C"],
     featured: false,
     kind: "school",
-    image: "/projects/writing-robot/preview.png",
+    image: "/projects/writing-robot/preview.jpg",
     link: { type: "wiki", url: "https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/projet-rob3-mathys-claudel-sarah-el-zeghendy-romain-darde" },
   },
   {
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     stack: ["C++", "OOP"],
     featured: false,
     kind: "school",
-    image: "/projects/bomberbot/preview.png",
+    image: "/projects/bomberbot/preview.jpg",
     link: { type: "repo", url: "https://github.com/Romain-Darde/BomberBot" },
   },
   {

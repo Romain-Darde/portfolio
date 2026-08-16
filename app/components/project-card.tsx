@@ -1,6 +1,5 @@
 import Image from "next/image";
 import BeforeAfterSlider from "@/app/components/before-after-slider";
-import { versioned } from "@/lib/asset-version";
 import type { Project, ProjectKind, ProjectLink } from "@/lib/projects";
 
 function linkMeta(link: ProjectLink) {
@@ -28,21 +27,16 @@ function ProjectPreview({ project }: { project: Project }) {
   const { link, image, beforeAfter, title } = project;
 
   if (beforeAfter && beforeAfter.length > 0) {
-    const pairs = beforeAfter.map(({ before, after }) => ({
-      before: versioned(before),
-      after: versioned(after),
-    }));
-    return <BeforeAfterSlider pairs={pairs} alt={title} />;
+    return <BeforeAfterSlider pairs={beforeAfter} alt={title} />;
   }
 
   if (!image && link?.type !== "video") return null;
 
   const content = image ? (
     <Image
-      src={versioned(image)}
+      src={image}
       alt={title}
       fill
-      unoptimized
       sizes="(min-width: 768px) 480px, 100vw"
       className="object-cover"
     />
@@ -83,10 +77,9 @@ export default function ProjectCard({ project }: { project: Project }) {
     <div className="relative">
       {sketch && (
         <Image
-          src={versioned(sketch)}
+          src={sketch}
           alt=""
           aria-hidden
-          unoptimized
           width={600}
           height={459}
           className="pointer-events-none absolute -right-6 -bottom-6 z-10 w-28 -rotate-4 drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] sm:w-48"
@@ -111,9 +104,8 @@ export default function ProjectCard({ project }: { project: Project }) {
                 className="inline-block rounded-md bg-white px-3 py-2 transition hover:shadow-[0_0_20px_-6px_var(--color-signal)]"
               >
                 <Image
-                  src={versioned(logo.src)}
+                  src={logo.src}
                   alt={title}
-                  unoptimized
                   width={190}
                   height={100}
                   className="h-8 w-auto object-contain"
