@@ -23,7 +23,13 @@ const kindLabel: Record<ProjectKind, string> = {
   personal: "Personal",
 };
 
-function ProjectPreview({ project }: { project: Project }) {
+function ProjectPreview({
+  project,
+  eager,
+}: {
+  project: Project;
+  eager?: boolean;
+}) {
   const { link, image, beforeAfter, title } = project;
 
   if (beforeAfter && beforeAfter.length > 0) {
@@ -37,6 +43,7 @@ function ProjectPreview({ project }: { project: Project }) {
       src={image}
       alt={title}
       fill
+      loading={eager ? "eager" : "lazy"}
       sizes="(min-width: 768px) 480px, 100vw"
       className="object-cover"
     />
@@ -69,7 +76,13 @@ function ProjectPreview({ project }: { project: Project }) {
   );
 }
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  eager,
+}: {
+  project: Project;
+  eager?: boolean;
+}) {
   const { title, tagline, stack, link, featured, logo, kind, sketch } =
     project;
 
@@ -91,7 +104,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           featured ? "shadow-[0_0_40px_-20px_var(--color-accent)]" : ""
         }`}
       >
-        <ProjectPreview project={project} />
+        <ProjectPreview project={project} eager={eager} />
 
         <div className="p-5">
           <div className="flex items-center justify-between gap-3">

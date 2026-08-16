@@ -57,9 +57,11 @@ function PeriodLabel({
 function DesktopRow({
   project,
   side,
+  eager,
 }: {
   project: Project;
   side: "left" | "right";
+  eager?: boolean;
 }) {
   const x = side === "left" ? "left-[20px]" : "left-[60px]";
 
@@ -67,7 +69,7 @@ function DesktopRow({
     <div className="grid grid-cols-[1fr_5rem_1fr] items-start">
       <div>
         {side === "left" ? (
-          <ProjectCard project={project} />
+          <ProjectCard project={project} eager={eager} />
         ) : (
           <PeriodLabel project={project} align="right" />
         )}
@@ -82,7 +84,7 @@ function DesktopRow({
 
       <div>
         {side === "right" ? (
-          <ProjectCard project={project} />
+          <ProjectCard project={project} eager={eager} />
         ) : (
           <PeriodLabel project={project} align="left" />
         )}
@@ -91,7 +93,13 @@ function DesktopRow({
   );
 }
 
-function MobileRow({ project }: { project: Project }) {
+function MobileRow({
+  project,
+  eager,
+}: {
+  project: Project;
+  eager?: boolean;
+}) {
   return (
     <li className="relative pl-12">
       <span
@@ -102,7 +110,7 @@ function MobileRow({ project }: { project: Project }) {
       <div className="mb-2 font-mono text-xs text-signal">
         {project.period ?? project.year}
       </div>
-      <ProjectCard project={project} />
+      <ProjectCard project={project} eager={eager} />
     </li>
   );
 }
@@ -115,8 +123,8 @@ export default function Timeline({ projects }: { projects: Project[] }) {
       <div className="relative md:hidden">
         <div className="absolute left-[7px] top-2 bottom-2 w-px bg-accent" />
         <ol className="space-y-14">
-          {ordered.map((project) => (
-            <MobileRow key={project.slug} project={project} />
+          {ordered.map((project, i) => (
+            <MobileRow key={project.slug} project={project} eager={i === 0} />
           ))}
         </ol>
       </div>
@@ -128,7 +136,7 @@ export default function Timeline({ projects }: { projects: Project[] }) {
           return (
             <div key={project.slug}>
               {i > 0 && <Connector from={prevSide} />}
-              <DesktopRow project={project} side={side} />
+              <DesktopRow project={project} side={side} eager={i === 0} />
             </div>
           );
         })}
