@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     slug: "writing-robot",
     year: 2023,
-    period: "Feb - May 2023",
+    period: "Feb - May 2024",
     title: "Writing robot",
     tagline: "From laser-cut design to Arduino control.",
     stack: ["Arduino", "C"],
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     slug: "bomberbot",
     year: 2024,
-    period: "Feb - Apr 2024",
+    period: "Feb - Apr 2025",
     title: "BomberBot",
     tagline: "Bomberman-style 2D game in object-oriented C++.",
     stack: ["C++", "OOP"],
@@ -51,7 +51,7 @@ export const projects: Project[] = [
   {
     slug: "roche-meca",
     year: 2024,
-    period: "Apr - Jun 2024",
+    period: "Apr - Jun 2025",
     title: "Roche Meca",
     tagline: "Contributed to the integration of a FANUC M-10iD12 robotic cell for machining high-precision industrial parts.",
     stack: ["Industrial Robotics", "TopSolid", "FANUC"],
