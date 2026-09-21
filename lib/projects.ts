@@ -128,7 +128,7 @@ export const projects: Project[] = [
   {
     slug: "stanley-robotics",
     year: 2026,
-    period: "Mar - Aug 2026",
+    period: "Mar - Sep 2026",
     title: "Stanley Robotics",
     tagline: "Part of the robotics engineering team working on STAN the autonomous valet robot for car parking.",
     stack: ["Robotics", "Embedded Hardware & Software"],

@@ -18,13 +18,12 @@ export default function Home() {
 
         <p className="mt-3 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-signal">
           Seeking a full-time Software or Robotics Engineer role - available
-          from September 2026
+          from October 2026
         </p>
 
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-dim">
-          Final-year robotics engineering student, currently interning at Stanley
-          Robotics. <br />
-          Writing code for the physical world.
+          Newly graduated robotics engineer. <br />
+          Fresh out of my internship at Stanley Robotics, I am now seeking a first full-time role to learn, grow, and build my experience.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-4">
