@@ -1,3 +1,4 @@
+import CvDownload from "@/app/components/cv-download";
 import SocialLinks from "@/app/components/social-links";
 import Timeline from "@/app/components/timeline";
 import { projects } from "@/lib/projects";
@@ -27,13 +28,7 @@ export default function Home() {
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-4">
-          <a
-            href="/CV_Romain_Darde.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded border border-accent px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-accent transition hover:bg-accent hover:text-ink hover:shadow-[0_0_20px_-4px_var(--color-accent)]"
-          >
-            Download CV ↓
-          </a>
+          <CvDownload />
           <SocialLinks />
         </div>
       </header>
@@ -95,13 +90,7 @@ export default function Home() {
             </dl>
 
             <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="/CV_Romain_Darde.pdf"
-                download
-                className="inline-flex items-center gap-2 rounded border border-accent px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-accent transition hover:bg-accent hover:text-ink hover:shadow-[0_0_20px_-4px_var(--color-accent)]"
-              >
-                Download CV ↓
-              </a>
+              <CvDownload />
               <SocialLinks />
             </div>
           </div>
