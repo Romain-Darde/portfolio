@@ -18,8 +18,8 @@ export default function Home() {
         </h1>
 
         <p className="mt-3 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-signal">
-          Seeking a full-time Software or Robotics Engineer role - available
-          from October 2026
+          Seeking a full-time Robotics Engineer role - available
+          immediately, open to relocate.
         </p>
 
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-dim">
